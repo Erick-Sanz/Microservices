@@ -1,0 +1,12 @@
+[submodule "gateway"]
+	path = gateway
+	url = https://github.com/Erick-Sanz/gateway.git
+[submodule "users_microservice"]
+	path = users_microservice
+	url = https://github.com/Erick-Sanz/users_microservice.git
+[submodule "sessions_microservice"]
+	path = sessions_microservice
+	url = https://github.com/Erick-Sanz/sessions_microservice.git
+[submodule "auth_microservice"]
+	path = auth_microservice
+	url = https://github.com/Erick-Sanz/auth_microservice.git
