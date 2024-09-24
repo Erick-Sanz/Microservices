@@ -17,28 +17,28 @@ services:
       - PORT=8000
       - NATS_SERVERS=nats://nats-server:4222
 
-  users:
-    build: ./users
+  users_microservice:
+    build: ./users_microservice
     volumes:
-      - ./users/src:/usr/src/app/src
+      - ./users_microservice/src:/usr/src/app/src
     command: npm run start:dev
     environment:
       - PORT=4000
       - NATS_SERVERS=${NATS_SERVERS}
       - MONGODB_URL=${MONGODB_URL_USERS}
 
-  auth:
-    build: ./auth
+  auth_microservice:
+    build: ./auth_microservice
     volumes:
-      - ./auth/src:/usr/src/app/src
+      - ./auth_microservice/src:/usr/src/app/src
     command: npm run start:dev
     environment:
       - NATS_SERVERS=${NATS_SERVERS}
 
-  sessions:
-    build: ./sessions
+  sessions_microservice:
+    build: ./sessions_microservice
     volumes:
-      - ./sessions/src:/usr/src/app/src
+      - ./sessions_microservice/src:/usr/src/app/src
     command: npm run start:dev
     environment:
       - PORT=4002
